@@ -27,6 +27,8 @@ export const putDb = async (content) => {
   const result = await request;
 
   console.log('Content added to database', result);
+  
+  return result;
 };
 
 // Method that gets all the content from the database
