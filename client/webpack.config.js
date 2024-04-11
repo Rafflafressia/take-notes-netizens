@@ -18,6 +18,11 @@ module.exports = () => {
       new HtmlWebpackPlugin({
         template: './index.html',
         title: 'Take Notes Netizens'}),
+
+      new InjectManifest({
+          swSrc: './src-sw.js',
+          swDest: 'sw.js',
+      }),
       
       new WebpackPwaManifest({
         fingerprints: false,
@@ -37,12 +42,7 @@ module.exports = () => {
           },
         ]}),
 
-      new InjectManifest({
-        swSrc: './src-sw.js',
-        swDest: 'sw.js',
-      }),
-
-      ] ,
+      ],
 
     module: {
       // CSS loaders and Babel configuration
