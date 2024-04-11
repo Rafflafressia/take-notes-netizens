@@ -21,7 +21,8 @@ export const putDb = async (content) => {
 
   const store = tx.objectStore('jate');
 
-  const request = store.add(content);
+  // update the existing content in the database
+  const request = store.put({idb: 1, content});
 
   const result = await request;
 
@@ -37,7 +38,7 @@ export const getDb = async () => {
 
   const store = tx.objectStore('jate');
 
-  const request = store.getAll();
+  const request = store.get(1);
 
   const result = await request;
 
